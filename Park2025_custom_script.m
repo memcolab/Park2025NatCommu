@@ -12,8 +12,7 @@ ROISizes = [300,400,250,550];% sizes (number of voxels) of each ROI
 nSplits = 3;% number of run splits (e.g. 3 ways of spliting 4 runs into two)
 
 % load fMRI data
-patternMatrix_odd = randn(nConds,max(ROISizes),nROIs,nSplits);
-patternMatrix_even = randn(nConds,max(ROISizes),nROIs,nSplits);
+load('datafilename.mat','patternMatrix_odd','patternMatrix_even'); % matrix size: nConds x max(ROISizes) x nROIs x nSplits
 
 correlMatrixFull = zeros(nConds,nConds,nROIs,nSplits);
 for cSplit = 1:nSplits
@@ -75,8 +74,7 @@ nROIs = 4;% number of target ROIs
 ROISizes = [300,400,250,550];% sizes (number of voxels) of each ROI
 
 % load fMRI data of task A and B
-taskA_patternMatrix_all = randn(nConds,max(ROISizes),nROIs);
-taskB_patternMatrix_all = randn(nConds,max(ROISizes),nROIs);
+load('datafilename.mat','taskA_patternMatrix_all','taskB_patternMatrix_all'); % matrix size: nConds x max(ROISizes) x nROIs
 
 correlMatrixFull = zeros(nConds,nConds,nROIs);
 for cROI = 1:nROIs
@@ -139,8 +137,7 @@ nROIs = 4;% number of target ROIs
 ROISizes = [300,400,250,550];% sizes (number of voxels) of each ROI
 
 % load fMRI data of task A and B
-taskA_patternMatrix_all = randn(nConds,max(ROISizes),nROIs);
-taskB_patternMatrix_all = randn(nConds,max(ROISizes),nROIs);
+load('datafilename.mat','taskA_patternMatrix_all','taskB_patternMatrix_all'); % matrix size: nConds x max(ROISizes) x nROIs
 
 correlMatrixFull = zeros(nConds,nConds,nROIs);
 for cROI = 1:nROIs
